@@ -29,8 +29,8 @@ public class Building extends JPanel {
         final int WINDOW_HEIGHT_CONSTANT = 30;
         final int WINDOW_SPACING_CONSTANT = 6;
 
-		int windowRows = getRandomNumber(ROW_CONSTANT); //random number of rows
-        int windowWidth = getRandomNumber(WINDOW_WIDTH_CONSTANT); //random width of windows
+		int windowRows = getRandomNumber(5); //random number of rows
+        int windowWidth = getRandomNumber(4); //random width of windows
 
         int windowColumns = getRandomNumber(COLUMN_CONSTANT); //random number of columns
         int windowHeight = getRandomNumber(WINDOW_HEIGHT_CONSTANT); //random height of windows
@@ -62,7 +62,7 @@ public class Building extends JPanel {
 
 	}
 
-	public int getRandomNumber(int max)
+	static int getRandomNumber(int max)
     {
         final int PERCENT = 100;
         final int MIN  = 1;
