@@ -68,7 +68,7 @@ public class Building extends JPanel {
         final int MIN  = 1;
 
         int num = 0;
-        while(num == 0) num = (int)Math.random() * PERCENT;
+        while(num == 0) num = (int)(Math.random() * PERCENT);
 
         return(num % max) + MIN;
 
