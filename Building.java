@@ -23,15 +23,19 @@ public class Building extends JPanel {
 		this.setBackground(Color.WHITE);
 
 
+        final int ROW_CONSTANT = 20;
+        final int WINDOW_WIDTH_CONSTANT = 20;
+        final int COLUMN_CONSTANT = 20;
+        final int WINDOW_HEIGHT_CONSTANT = 30;
+        final int WINDOW_SPACING_CONSTANT = 6;
 
+		int windowRows = getRandomNumber(ROW_CONSTANT); //random number of rows
+        int windowWidth = getRandomNumber(WINDOW_WIDTH_CONSTANT); //random width of windows
 
-		int windowRows = (int)(Math.random()*21); //random number of rows
-        int windowWidth = (int)(Math.random()*20); //random width of windows
+        int windowColumns = getRandomNumber(COLUMN_CONSTANT); //random number of columns
+        int windowHeight = getRandomNumber(WINDOW_HEIGHT_CONSTANT); //random height of windows
 
-        int windowColumns = (int)(Math.random()*20); //random number of columns
-        int windowHeight = (int)(Math.random()*30); //random height of windows
-
-        int windowSpacing = (int)(Math.random()*6); //random spacing distance
+        int windowSpacing = getRandomNumber(WINDOW_SPACING_CONSTANT); //random spacing distance
 
         //Height and width are based on the random window numbers above
         int buildingWidth = (windowSpacing) + (windowSpacing * windowColumns) + (windowWidth * windowColumns);
@@ -57,5 +61,17 @@ public class Building extends JPanel {
             }
 
 	}
+
+	public int getRandomNumber(int max)
+    {
+        final int PERCENT = 100;
+        final int MIN  = 1;
+
+        int num = 0;
+        while(num == 0) num = (int)Math.random() * PERCENT;
+
+        return(num % max) + MIN;
+
+    }
 
 }
